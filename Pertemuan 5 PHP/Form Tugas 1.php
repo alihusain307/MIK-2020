@@ -34,9 +34,11 @@ switch ($gol) {
         $gb=$total*4;
 }
         else  {
-          $gaji = $jamker * $upah
-        }
-        }
-    echo$nama ;
-    echo $jamker;
-    echo $gol;
+          $gaji = $jamker * $upah;
+
+      }
+    echo "$nama" ;
+    echo "<br>$jamker";
+    echo "<br>$gol";
+}
+?>
