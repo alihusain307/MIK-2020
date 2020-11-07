@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="tombol()">Konfirmasi</button>
+    <hr>
+    <h1 id="text" ></h1>
+
+
+    <script>
+        function tombol() {
+            // alert('Hello World!');
+            var yakin = confirm('Ingin Menambahkan Nama?');
+       if (yakin) {
+        var nama = prompt('Masukan Nama Anda!', '');
+        document.getElementById('text').innerHTML = nama;
+        console.log(nama);
+       } else {
+        var alert = alert('Tidak Menambahkan Nama!');
+        document.getElementById('text').innerHTML = alert;
+       }
+        }
+    </script>
+    
+</body>
+</html>

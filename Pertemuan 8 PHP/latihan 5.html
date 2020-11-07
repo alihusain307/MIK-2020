@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button onclick="alert('Selamat Datang!!')">Alert</button>
+    <button onclick="confirm('Data akan Dihapus!')">Confirm</button> -->
+    <script>
+        // var yakin confirm('Data akan Dihapus!');
+        // if (yakin) {
+        //     alert('Data Terhapus!');
+        // }
+       // alert('Selamat Datang!!')
+       // var nama = prompt("Siapa nama kamu?", "");
+       //  document.write("<p>Hai "+ nama +"</p>");
+       //  console.log('Hai'+ nama);
+
+       var yakin = confirm('Ingin Menambahkan Nama?');
+       if (yakin) {
+        var nama = prompt('Masukan Nama Anda!', '');
+        console.log('Hai, '+ nama);
+       } else {
+        alert('Tidak Menambahkan Nama!');
+       }
+    </script>
+</body>
+</html>
