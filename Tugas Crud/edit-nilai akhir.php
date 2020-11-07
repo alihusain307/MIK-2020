@@ -2,14 +2,15 @@
 include 'config/koneksi 2.php';
 $id = $_GET['id'];
 
-$sql  = mysqli_query($conn, "SELECT * FROM pendaftaran WHERE id = id");
+$sql  = mysqli_query($koneksi, "SELECT * FROM nilai_akhir WHERE id = $id");
 
 if ($sql) {
-    $row = mysqli_fetch_assoc ($sql);
+    $row= mysqli_fetch_assoc($sql) ;
 } else {
     echo "Data Tidak Ditemukan";
 }
-  ?>
+var_dump($id, $sql, $row);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +26,7 @@ if ($sql) {
             <div class="col-12">
                 <h4>Form Edit Data Nilai</h4>
                 <hr>
-                <form action ="act-nilai akhir.php" method="POST">
+                <form action ="act-edit.php" method="POST">
                     <div class="form-group">
                     <label for="nim">NIM:</label>
                     <input type="text" id="nim" class="form-control" name="nim" required value="<?=$row['nim']; ?>">

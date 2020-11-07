@@ -6,30 +6,37 @@ if (isset($_POST['submit'])) {
     $nama_lengkap = $_POST['nama_lengkap'];
     $uts = $_POST['uts'];
     $uas = $_POST['uas'];
- 
+
     
     
     $rata = ($uts + $uas) / 2;
     switch (true) {
-    case ($rata > 65 ):
+        case ($rata > 65 ):
         $keterangan = "Lulus";
         break;
-    
-    default:
+
+        default:
         $keterangan = "Tidak Lulus";
         break;
     } 
 
-    $result = "INSERT INTO nilai_akhir VALUES ('',  '$nim', '$nama_lengkap', '$uts', '$uas', $rata, '$keterangan')";
+    $cek = mysqli_query($koneksi, "SELECT nim FROM nilai_akhir
+        WHERE nim= '$nim'");
 
-    $sql = mysqli_query($conn, $result);
-
-    if ($sql) {
-        echo "<script>alert('Data Berhasil ditambahkan');</script>";
-        header('location:nilai akhir.php');
+    if (mysqli_num_rows($cek) === 1) {
+        echo "<script>
+                alert('Data Ditemukan!');
+            </script>";
     } else {
-        echo "<script>alert('Data Gagal ditambahkan');</script>";
+        $result = "INSERT INTO nilai_akhir VALUES ('',  '$nim', '$nama_lengkap', '$uts', '$uas', $rata, '$keterangan')";
+
+    $sql = mysqli_query($koneksi, $result);
+
+    if (!$sql) {
+        echo "<script>alert('Data Gagal Ditambahkan!');</script>";
     }
 }
-
+    
+}
+header("Location:nilai akhir.php");
 ?>

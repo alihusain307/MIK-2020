@@ -7,16 +7,24 @@
 </head>
 <body>
 
-    <table>
-        <tr>
+    <table border="1">
+        <tr>            
             <td>
+                Anak ayam turun 10
+                <br>
                 <?php 
                 $z=10;
+                $i=9;
                 do {
-                 echo "anak ayam turun.$z, mati satu tinggal".$z-1; 
-                 $x++;
+                 echo "<br>Anak ayam turun $z, mati satu tinggal ".$i;
+                 $z=$z-1;
+                 $i=$i-1;
                 }
-                 while ($z <= 1);
+                 while ($z >= 1);
+                 while ($i >= 1);
+                 if ($i=0) {
+                    
+                 }
                 ?>
             </td>
         </tr>

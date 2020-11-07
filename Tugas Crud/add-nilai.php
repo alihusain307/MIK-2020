@@ -14,7 +14,7 @@ include 'config/koneksi 2.php';
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h4>Form Input Nilai Baru</h4>
+                <h4>Form Input Nilai Akhir</h4>
                 <hr>
                 <form action ="act-nilai akhir.php" method="POST">
                     <div class="form-group">
@@ -39,13 +39,22 @@ include 'config/koneksi 2.php';
                     
                     <div class="form-group float-right">
                     <a href="nilai akhir.php" class="btn btn-secondary btn-md">Kembali</a>
-                    <button name="submit" class="btn btn-primary btn-md">Simpan</button>
+                    <button name="submit" onclick="submit()" class="btn btn-primary btn-md">Simpan</button>
                    </div>
                 </form>
             </div>
         </div>
     </div>
-    
+    <script>
+        function submit() {
+            var simpan = confirm('Simpan Data yang DiInput?');
+            if (simpan) {
+                window.location = 'nilai akhir.php';
+            } else {
+                window.location = 'add-nilai.php';
+            }
+        }
+    </script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
 </body>

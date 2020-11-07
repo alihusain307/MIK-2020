@@ -6,13 +6,13 @@
      <title>Penghitungan Gaji</title>
  </head>
  <body>
-     <form action="program form.php" method="POST" >
+     <form action="program.php" method="POST" >
         <label>Nama:</label>
         <input type="text" name="nama"><br>
                 <label>Jam Kerja:</label>
         <input type="text" name="jam_kerja"><br>
-                <label>Golongan:</label>
-        <input type="text" name="golongan"><br>
+<!--                 <label>Golongan:</label>
+        <input type="text" name="golongan"><br> -->
         <button type="submit" name="submit">Submit</button>
     </form>
  </body>
