@@ -1,6 +1,18 @@
  <?php 
  $conn= mysqli_connect("localhost","root", "","crud_alihusain");
  $result= mysqli_query ($conn, "SELECT * FROM nilai_akhir");
+
+ if (isset($_POST['btnsearch'])) {
+  $search = $_POST['search'];
+  $result = $conn->query("SELECT * FROM nilai_akhir WHERE nama_lengkap LIKE '%". $search ."%'");
+
+  if (mysqli_num_rows($result) == 0) {
+    $result = $conn->query("SELECT * FROM nilai_akhir"); 
+      echo '<script>alert("Data Tidak ditemukan!")</Script>';
+} else {
+  $sql = $conn->query("SELECT * FROM biodata");
+}
+}
  ?>
 
 
@@ -18,11 +30,18 @@
     <div class="container">
         <div class="row">
             <div class="col-12" >
-                <div class="row mt-2">
                     <div class="col-6"><h3>Data Nilai</h3></div>
-                    <div class="col-6"><a href="add-nilai.php" class="btn btn-primary btn-sm float-right">Tambah</a></div>
-                </div>
-                
+                    <form action="" method="POST">
+                      <div class="col-4">
+                        <input class="white-text" type="text" name="search" placeholder="Pencarian Berdasarkan Nama"> 
+                      </div>
+                      <div class="col-4">
+                        <button type="Submit" name="btnsearch" class="btn btn-primary btn-sm float-left">Search</button>
+                      </div>
+                      <div class="col-4">
+                        <a href="add-nilai.php" class="btn btn-primary btn-sm float-right">Tambah</a>
+                      </div>
+                    </form>
                 <table class="table table-bordered table-sm">
                     <thead>
                        <tr>
